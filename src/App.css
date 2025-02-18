@@ -1,0 +1,303 @@
+/* General Styles */
+body {
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin: 0;
+  padding: 0;
+  color: white;
+  height: 100vh;
+  background: black;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Full Width and Height */
+.app-container {
+  max-width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 20px;
+  overflow-y: auto;
+  background: #121212;
+  transition: background 0.3s ease;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  background: #1e1e1e;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.1);
+}
+
+.header h1 {
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+}
+
+.search-bar {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  background: #292929;
+  color: white;
+  margin: 0 10px;
+  outline: none;
+}
+
+.search-bar::placeholder {
+  color: #bbb;
+}
+
+.add-btn {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: 0.3s ease-in-out;
+}
+
+.add-btn:hover {
+  background: #0056b3;
+}
+
+/* Light/Dark Toggle */
+.theme-toggle-btn {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 10px;
+  transition: color 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+  color: #007bff;
+}
+
+/* Notes Grid */
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Note Cards */
+.note-card {
+  background: #252525;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.note-card:hover {
+  transform: translateY(-5px);
+}
+
+.note-card h2 {
+  margin: 0 0 10px;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.note-card p {
+  margin: 0;
+  color: #bbb;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Note Actions */
+.note-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.edit-btn,
+.delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.edit-btn {
+  color: #ffc107;
+}
+
+.delete-btn {
+  color: #f44336;
+}
+
+.edit-btn:hover {
+  color: #ffdb4d;
+}
+
+.delete-btn:hover {
+  color: #ff6b6b;
+}
+
+/* Empty State */
+.empty-msg {
+  text-align: center;
+  color: #888;
+  margin-top: 20px;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: #222;
+  padding: 45px;
+  border-radius: 8px;
+  width: 450px;
+  box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.1);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.modal-header h2 {
+  color: white;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.modal input,
+.modal textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  background: #333;
+  color: black;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.modal input::placeholder,
+.modal textarea::placeholder {
+  color: #bbb;
+}
+
+.modal textarea {
+  height: 100px;
+  resize: none;
+}
+
+.save-btn {
+  margin-left: 10%;
+  background: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 80%;
+  height: 60px;
+  transition: 0.3s ease-in-out;
+}
+
+.save-btn:hover {
+  background: #0056b3;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Light Mode Overrides */
+.app-container.light {
+  background: #f7f7f7;
+  color: black;
+}
+
+.header.light {
+  background: #f1f1f1;
+}
+
+.note-card.light {
+  background: #ffffff;
+  border: 1px solid #ddd;
+}
+
+.modal.light {
+  background: #fff;
+  color: black;
+}
+
+.modal input,
+.modal textarea {
+  background: #f7f7f7;
+}
+
+.search-bar.light {
+  background: #f7f7f7;
+}
+
+.add-btn.light {
+  background: #007bff;
+  color: white;
+}
+
+.add-btn.light:hover {
+  background: #0056b3;
+}
+
+.theme-toggle-btn.light {
+  color: black;
+}
+
+/* Light Mode Button Hover */
+.theme-toggle-btn.light:hover {
+  color: #007bff;
+}
